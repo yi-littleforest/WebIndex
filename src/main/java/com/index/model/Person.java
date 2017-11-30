@@ -9,7 +9,7 @@ package com.index.model;
  *
  * @author yi
  */
-public class Person {
+public abstract class Person {
 
     /**
      * @return the name

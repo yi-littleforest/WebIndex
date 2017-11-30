@@ -5,6 +5,7 @@
  */
 package com.index.controller;
 
+import com.index.model.Employee;
 import com.index.model.Person;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,8 +32,8 @@ public class ScriptlessTest extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Person person = new Person();
-        person.setName("Evan");
+        Person person = new Employee();
+        person.setName("Emp:1 Evan");
         request.setAttribute("person", person);
         request.getRequestDispatcher("ScriptlessTest/result.jsp").forward(request, response);
     }

@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <jsp:useBean id="person" class="com.index.model.Person" scope="request" />
+        <jsp:useBean id="person" type="com.index.model.Employee" scope="request" />
         Person created by Servlet is <jsp:getProperty name="person" property="name" />
     </body>
 </html>
