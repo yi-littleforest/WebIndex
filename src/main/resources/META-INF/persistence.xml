@@ -14,7 +14,7 @@ and open the template in the editor.
 	http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
 
 	<persistence-unit name="HelloWorldPU">
-		<jta-data-source>myDS</jta-data-source>
+		<jta-data-source>jdbc/MyLocalDB</jta-data-source>
 		<class>fool.helloworld.Message</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
