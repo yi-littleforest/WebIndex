@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+import org.jpwh.helloworld.HelloWorldJPA;
 
 /**
  *
@@ -38,7 +41,12 @@ public class JDBCDataSourceExample extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        HelloWorldJPA helloWorld = new HelloWorldJPA();
+        try {
+            helloWorld.storeLoadMessage();
+        } catch (Exception ex) {
+            Logger.getLogger(JDBCDataSourceExample.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         Context ctx = null;
 		Connection con = null;
