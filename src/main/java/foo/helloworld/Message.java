@@ -5,6 +5,7 @@
  */
 package foo.helloworld;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
  * @author yi
  */
 @Entity
-public class Message {
+public class Message implements Serializable {
     @Id
     @GeneratedValue
     private Long id;

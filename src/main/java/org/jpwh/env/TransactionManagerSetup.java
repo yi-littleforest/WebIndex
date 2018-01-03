@@ -26,7 +26,8 @@ import java.util.logging.Logger;
  */
 public class TransactionManagerSetup {
 
-    public static final String DATASOURCE_NAME = "myDS";
+    //public static final String DATASOURCE_NAME = "myDS";
+    public static final String DATASOURCE_NAME = "java:/comp/env/jdbc/MyDB";
 
     private static final Logger logger =
         Logger.getLogger(TransactionManagerSetup.class.getName());
@@ -41,7 +42,10 @@ public class TransactionManagerSetup {
 
     public TransactionManagerSetup(DatabaseProduct databaseProduct,
                                    String connectionURL) throws Exception {
-
+        
+        System.out.println("in TransactionManagerSetup");
+        System.out.println("Starting database connection pool");
+        
         logger.fine("Starting database connection pool");
 
         logger.fine("Setting stable unique identifier for transaction recovery");
@@ -57,6 +61,7 @@ public class TransactionManagerSetup {
         TransactionManagerServices.getConfiguration().setWarnAboutZeroResourceTransaction(false);
 
         logger.fine("Creating connection pool");
+        System.out.println("Creating connection pool");
         datasource = new PoolingDataSource();
         datasource.setUniqueName(DATASOURCE_NAME);
         datasource.setMinPoolSize(1);

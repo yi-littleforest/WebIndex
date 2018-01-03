@@ -14,7 +14,8 @@ and open the template in the editor.
 	http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
 
 	<persistence-unit name="HelloWorldPU">
-		<jta-data-source>java:/comp/env/jdbc/MyLocalDB</jta-data-source>
+            <provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/comp/env/jdbc/MyDB</jta-data-source>
 		<class>fool.helloworld.Message</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>

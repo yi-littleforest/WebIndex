@@ -19,7 +19,11 @@ public class HelloWorldJPA extends TransactionManagerTest {
 
         EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("HelloWorldPU");
-
+        if(TM != null){
+            System.out.println("TM is not null");
+        }else{
+            System.out.println("TM is null");
+        }
         try {
             {
                 /* 
